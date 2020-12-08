@@ -9,7 +9,7 @@
 
 - name: Install slurm compute packages
   dnf:
-    name: "{{ slurm_setup_packages }}"
+    name: "{{ slurm_prereq_packages }}"
     state: latest
     enablerepo: "epel,powertools"
 
