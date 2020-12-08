@@ -1,5 +1,12 @@
 ---
 # tasks file for ansible-role-slurm-compute
+- name: Add slurm user
+  user:
+    name: slurm
+    comment: Slurm user
+    uid: 1001
+    group: 1001
+    state: present
 
 - name: Install prereqs for building slurm
   dnf:
@@ -12,6 +19,15 @@
     name: "{{ slurm_prereq_packages }}"
     state: latest
     enablerepo: "epel,powertools"
+
+- name: Load slurm.conf
+  file:
+    src: slurm.conf
+    path: /etc/slurm.conf
+    owner: slurm
+    group: slurm
+    mode: 0644
+    state: present
 
 - name: "Make slurm_repo directory"
   file:
