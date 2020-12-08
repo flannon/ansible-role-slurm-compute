@@ -25,7 +25,7 @@
     src: slurm.conf
     dest: /etc/slurm.conf
     owner: slurm
-    group: slurm
+    #group: slurm
     mode: "0644"
 
 - name: "Make slurm_repo directory"
