@@ -21,12 +21,12 @@
     enablerepo: "epel,powertools"
 
 - name: Load slurm.conf
-  file:
+  copy:
     src: slurm.conf
-    path: /etc/slurm.conf
+    dest: /etc/slurm.conf
     owner: slurm
     group: slurm
-    mode: 0644
+    mode: "0644"
     state: file
 
 - name: "Make slurm_repo directory"
