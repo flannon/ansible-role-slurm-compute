@@ -1,0 +1,44 @@
+---
+# defaults file for ansible-role-slurm-compute
+slurm_prereq_packages:
+  - bzip2-devel
+  - gcc
+  - openssl-devel
+  - make
+  - mariadb-devel
+  #- mariadb-server
+  - munge 
+  - munge-devel 
+  - munge-libs 
+  - readline-devel 
+  - perl-ExtUtils-MakeMaker 
+  - perl-DBI
+  - openssl-devel 
+  - pam-devel 
+  - readline-devel
+  - rpm-build 
+  - pam-devel
+  - perl-DBI 
+  - perl-Switch 
+  - python3
+  - wget
+slurm_version: 20.11.0-1
+slurm_packages: 
+  - slurm
+  - slurm-contribs
+  - slurm-devel
+  - slurm-libpmi
+  - slurm-openlava
+  - slurm-pam_slurm
+  - slurm-perlapi
+  - slurm-slurmctld
+  - slurm-slurmd
+  - slurm-slurmdbd
+  - slurm-torque
+slurm_compute_packages: 
+  - slurm
+  - slurm-devel
+  - slurm-libpmi
+  - slurm-slurmd
+
+
