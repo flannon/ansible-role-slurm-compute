@@ -25,6 +25,7 @@
   unarchive:
     src: slurm-repo.tar.gz
     dest: "{{ slurm_repo }}"
+    become: true
 
 - name: Install slurm compute packages
   dnf:
