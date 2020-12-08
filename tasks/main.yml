@@ -24,8 +24,10 @@
 - name: "Load slurm rpms"
   unarchive:
     src: slurm-repo.tar.gz
+    owner: "root"
+    group: "root"
     dest: "{{ slurm_repo }}"
-    become: true
+  become: true
 
 - name: Install slurm compute packages
   dnf:
