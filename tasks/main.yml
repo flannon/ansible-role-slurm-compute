@@ -16,6 +16,9 @@
 - name: "Make slurm_repo directory"
   file:
     path: "{{ slurm_repo }}"
+    owner: "root"
+    group: "root"
+    mode: "0755"
     state: directory
 
 - name: "Load slurm rpms"
