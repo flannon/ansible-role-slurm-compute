@@ -15,7 +15,7 @@
 
 - name: "Make slurm_repo directory"
   file:
-    path: {{ slurm_repo }}
+    path: "{{ slurm_repo }}"
     state: directory
 
 - name: "Load slurm rpms"
