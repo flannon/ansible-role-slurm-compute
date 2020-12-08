@@ -40,5 +40,6 @@ slurm_compute_packages:
   - slurm-devel
   - slurm-libpmi
   - slurm-slurmd
+slurm_repo: /tmp/slurm-repo
 
 
