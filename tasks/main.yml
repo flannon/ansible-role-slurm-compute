@@ -29,15 +29,21 @@
     dest: "{{ slurm_repo }}"
   become: true
 
-#
-- name: Install slurm compute packages
-  dnf:
-    name:
-      - "{{ slurm_repo }}/slurm-{{ slurm_version }}.el8.x86_64.rpm"
-      - "{{ slurm_repo }}/slurm-slurmd-{{ slurm_version }}.el8.x86_64.rpm"
-      #- "{{ slurm_repo }}/slurm-devel-{{ slurm_version }}.el8.x86_64.rpm"
-      #- "{{ slurm_repo }}/slurm-libpmi-{{ slurm_version }}.el8.x86_64.rpm"
-    validate_certs: no
-  become: yes
+  # dnf install of local packages is failing, example below.  For now
+  # for now we're we're just going to do it manually
+- name: "Hack the rpm install"
+  command: dnf install -y --nogpgcheck /tmp/slurm-repo/slurm-20.11.0-1.el8.x86_64.rpm /tmp/slurm-repo/slurm-slurmd-20.11.0-1.el8.x86_64.rpm
+  become: true
+
+# dnf install fails looking for cert
+#- name: Install slurm compute packages
+#  dnf:
+#    name:
+#      - "{{ slurm_repo }}/slurm-{{ slurm_version }}.el8.x86_64.rpm"
+#      - "{{ slurm_repo }}/slurm-slurmd-{{ slurm_version }}.el8.x86_64.rpm"
+#      #- "{{ slurm_repo }}/slurm-devel-{{ slurm_version }}.el8.x86_64.rpm"
+#      #- "{{ slurm_repo }}/slurm-libpmi-{{ slurm_version }}.el8.x86_64.rpm"
+#    validate_certs: no
+#  become: yes
 
 
