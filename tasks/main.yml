@@ -13,7 +13,7 @@
     state: latest
     enablerepo: "epel,powertools"
 
-- name: Load slurm rpms
+- name: "Load slurm rpms"
   unarchive:
     src: /files/slurm-repo.tar.gz
     dest: "{{ slurm_repo }}"
@@ -21,9 +21,9 @@
 - name: Install slurm compute packages
   dnf:
     name:
-      - #{{ slurm_repo }}/slurm"
-      - #{{ slurm_repo }}/slurm-devel"
-      - #{{ slurm_repo }}/slurm-libpmi"
-      - #{{ slurm_repo }}/slurm-slurmd"
+      - "{{ slurm_repo }}/slurm"
+      - "{{ slurm_repo }}/slurm-devel"
+      - "{{ slurm_repo }}/slurm-libpmi"
+      - "{{ slurm_repo }}/slurm-slurmd"
 
 
