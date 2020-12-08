@@ -30,12 +30,12 @@
   become: true
 
 #
-#- name: Install slurm compute packages
-#  dnf:
-#    name:
-#      - "{{ slurm_repo }}/slurm-{{ slurm_version }}.el8.x86_64.rpm"
-#      - "{{ slurm_repo }}/slurm-devel-{{ slurm_version }}.el8.x86_64.rpm"
-#      - "{{ slurm_repo }}/slurm-libpmi-{{ slurm_version }}.el8.x86_64.rpm"
-#      - "{{ slurm_repo }}/slurm-slurmd-{{ slurm_version }}.el8.x86_64.rpm"
+- name: Install slurm compute packages
+  dnf:
+    name:
+      - "{{ slurm_repo }}/slurm-{{ slurm_version }}.el8.x86_64.rpm"
+      - "{{ slurm_repo }}/slurm-devel-{{ slurm_version }}.el8.x86_64.rpm"
+      - "{{ slurm_repo }}/slurm-libpmi-{{ slurm_version }}.el8.x86_64.rpm"
+      - "{{ slurm_repo }}/slurm-slurmd-{{ slurm_version }}.el8.x86_64.rpm"
 
 
