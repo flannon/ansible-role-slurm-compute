@@ -27,7 +27,6 @@
     owner: slurm
     group: slurm
     mode: "0644"
-    state: file
 
 - name: "Make slurm_repo directory"
   file:
