@@ -15,7 +15,7 @@
 
 - name: "Load slurm rpms"
   unarchive:
-    src: /files/slurm-repo.tar.gz
+    src: slurm-repo.tar.gz
     dest: "{{ slurm_repo }}"
 
 - name: Install slurm compute packages
