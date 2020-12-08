@@ -13,6 +13,11 @@
     state: latest
     enablerepo: "epel,powertools"
 
+- name: "Make slurm_repo directory"
+  file:
+    path: {{ slurm_repo }}
+    state: directory
+
 - name: "Load slurm rpms"
   unarchive:
     src: slurm-repo.tar.gz
